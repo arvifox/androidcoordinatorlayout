@@ -9,4 +9,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    override fun onResume() {
+        super.onResume()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.content_frame, MobFragment.newInstance(), "").commit()
+    }
 }
